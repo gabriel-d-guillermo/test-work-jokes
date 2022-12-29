@@ -69,7 +69,7 @@ function Home() {
 
   useEffect(() => {
     window.scrollTo(0, 0);
-    let controller = new AbortController();
+    const controller = new AbortController();
     setIsLoading(true);
     const getCategory = async () => {
       try {
@@ -92,7 +92,6 @@ function Home() {
     };
 
     getCategory();
-
     return () => controller.abort();
   }, []);
 

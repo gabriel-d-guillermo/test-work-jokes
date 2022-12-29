@@ -1,23 +1,25 @@
-import { useState } from "react";
-
+import { Link } from "react-router-dom";
 import "./Dropdown.css";
 
 function Dropdown() {
   return (
     <ul className="dropdown-menu">
       <li className="dropdown-item">
-        My Publish Jokes
+        <Link to="/"> My Publish Jokes</Link>
         <hr />
       </li>
       <li className="dropdown-item">
-        My saved jokes
+        <Link to="/">My saved jokes</Link>
         <hr />
       </li>
       <li className="dropdown-item">
-        Account information
+        <Link to="/"> Account information</Link>
         <hr />
       </li>
-      <li className="dropdown-item">Publish new joke</li>
+
+      <li className="dropdown-item">
+        <Link to="/">Publish new joke </Link>
+      </li>
     </ul>
   );
 }

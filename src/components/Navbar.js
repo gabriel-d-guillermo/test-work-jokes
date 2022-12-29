@@ -1,6 +1,8 @@
-import { useRef, useEffect, useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import { Link } from "react-router-dom";
+import SideNav from "./SideNav";
 import Dropdown from "./Dropdown";
+import "./SideNav.css";
 import "./Navbar.css";
 
 import "./Dropdown.css";
@@ -11,36 +13,30 @@ import caretDown from "../assets/assets_Homework_Front-End_02/path.png";
 function Navbar() {
   const [dropdown, setDropdown] = useState(false);
   const [menu, setMenu] = useState(false);
-  const btnRef = useRef();
+
   let width = 0;
   if (menu) {
     width = 250;
   }
-  // close dropdown when click outside the component;;;
-  useEffect(() => {
-    const closeDropdown = e => {
-      let path = e.composedPath();
-      if (path[0] !== btnRef.current) {
-        setDropdown(false);
-      }
-    };
-    document.body.addEventListener("click", closeDropdown);
 
+  const dropdownRef = useRef(null);
+
+  useEffect(() => {
+    document.addEventListener("click", handleClick);
     return () => {
-      document.body.removeEventListener("click", closeDropdown);
+      document.removeEventListener("click", handleClick);
     };
   }, []);
+
+  const handleClick = event => {
+    if (!dropdownRef.current.contains(event.target)) {
+      setDropdown(false);
+    }
+  };
+
   return (
     <>
-      <div className="side-nav" style={{ width: `${width}px` }}>
-        <span className="closebtn" onClick={() => setMenu(!menu)}>
-          &times;
-        </span>
-        <Link>SO FUNKTIONIERT'S</Link>
-        <Link>SONDERANGEBOTE</Link>
-        <Link>MEIN BEREICH</Link>
-        <Link>Contact</Link>
-      </div>
+      <SideNav width={width} setMenu={setMenu} menu={menu} />
       <nav className="navbar">
         <ul className="navbar-nav">
           <Link to="/" className="SO-FUNCTIONIERTS navbar-item">
@@ -50,7 +46,7 @@ function Navbar() {
             SONDERANGEBOTE
           </Link>
           <div
-            ref={btnRef}
+            ref={dropdownRef}
             className={dropdown ? "MEIN-BEREICH navbar-item  active" : "MEIN-BEREICH navbar-item "}
             onClick={() => setDropdown(!dropdown)}
           >
