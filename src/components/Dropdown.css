@@ -1,0 +1,19 @@
+ .dropdown-menu {
+     position: absolute;
+     list-style: none;
+     z-index: 1;
+     background-color: var(--white-two);
+     right: 0px;
+     top: 70px;
+     border-radius: 5px;
+     font-family: 'montserrat-regular';
+     padding: 5px;
+ }
+
+ .dropdown-item {
+     color: var(--dark);
+     width: 190px;
+     margin: 0px 8px 7.5px;
+     font-size: 14px;
+     line-height: 1.43;
+ }

@@ -1,0 +1,91 @@
+.big-image {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: url('../assets/assets_Homework_Front-End_01/bitmap.png');
+    background-position: center;
+    background-size: cover;
+    height: 300px;
+}
+
+.big-image h1 {
+    font-family: 'montserrat-regular';
+    font-size: 48px;
+    color: var(--light-brown);
+    line-height: 1.5;
+}
+
+.big-image h2 {
+
+    font-family: 'montserrat-regular';
+    color: var(--white);
+    line-height: 1.5;
+}
+
+.search-container {
+    display: flex;
+    border: 1px solid var(--gray);
+    border-radius: 3px;
+    width: 500px;
+    height: 50px;
+    justify-content: center;
+    padding: 0;
+    margin-top: 2rem;
+}
+
+.search-icon {
+    padding: 10px;
+    background-color: transparent;
+    font-size: 17px;
+    border-left: none;
+    cursor: pointer;
+
+}
+
+.search-bar {
+    padding: 10px;
+    font-size: 14px;
+    float: left;
+    width: 100%;
+    background: transparent;
+    border-color: transparent;
+    outline: none;
+    color: var(--white);
+
+}
+
+@media (max-width: 769px) {
+
+    .big-image h1 {
+        font-size: 38px;
+    }
+
+    .big-image h2 {
+        font-size: 20px;
+    }
+
+    .search-container {
+        width: 400px;
+        height: 50px;
+    }
+
+}
+
+
+@media (max-width: 480px) {
+
+    .big-image h1 {
+        font-size: 28px;
+    }
+
+    .big-image h2 {
+        font-size: 14px;
+    }
+
+    .search-container {
+        width: 300px;
+        height: 50px;
+    }
+
+}

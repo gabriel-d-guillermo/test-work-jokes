@@ -1,0 +1,10 @@
+.footer-image {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: url('../assets/assets_Homework_Front-End_02/bitmap-copy.png');
+    background-position: center;
+    background-size: cover;
+    height: 200px;
+}
