@@ -15,8 +15,9 @@ function View() {
   const [dislikeCount, setDislikeCount] = useState(0);
 
   useEffect(() => {
+    window.scrollTo(0, 0);
+    setIsLoading(true);
     async function makeRequests() {
-      setIsLoading(true);
       try {
         const request = await fetch(`https://api.chucknorris.io/jokes/random?category=${category}`);
         const requestData = await request.json();

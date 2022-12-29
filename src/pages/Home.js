@@ -68,6 +68,7 @@ function Home() {
   }
 
   useEffect(() => {
+    window.scrollTo(0, 0);
     let controller = new AbortController();
     setIsLoading(true);
     const getCategory = async () => {
